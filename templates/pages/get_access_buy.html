@@ -29,27 +29,15 @@
                 </li>
                 <li class="mb-2">
                   <i class="bi bi-check text-primary"></i>
-                  <strong>100 board like questions</strong>
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check text-primary"></i>
-                  Targeted feedback
+                  100 board like questions
                 </li>
                 <li class="mb-2">
                   <i class="bi bi-check text-primary"></i>
                   You choose the exam type
                 </li>
                 <li class="mb-2">
-                  <i class="bi bi-check text-white"></i>
-                  Basic Science
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check text-white"></i>
-                  or
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check text-white"></i>
-                  Clinical Application
+                  <i class="bi bi-check text-primary"></i>
+                  Targeted feedback
                 </li>
                 <li class="mb-2">
                   <i class="bi bi-check text-primary"></i>
@@ -60,7 +48,7 @@
                 <form action="{% url 'stripe-checkout' %}" method="POST">
                   {% csrf_token %}
                   <input type="hidden" name="price-id" value="price_1OT56jHnSCQ3O7d7brxHhRJn" />
-                  <button class="btn btn-primary" type="submit" id="checkout-button">Get access</button>
+                  <button class="btn btn-primary" type="submit" id="checkout-button">Buy 1 exam token</button>
                 </form>
               </div>
             </div>
@@ -81,7 +69,7 @@
               <ul class="list-unstyled mb-4">
                 <li class="mb-2">
                   <i class="bi bi-check text-primary"></i>
-                  <strong>Access to all four exams</strong>
+                  <strong>Access all four exams</strong>
                 </li>
                 <li class="mb-2">
                   <i class="bi bi-check text-primary"></i>
@@ -89,23 +77,11 @@
                 </li>
                 <li class="mb-2">
                   <i class="bi bi-check text-primary"></i>
+                  All exam types
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check text-primary"></i>
                   Targeted feedback
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check text-primary"></i>
-                  Basic Science #1
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check text-primary"></i>
-                  Basic Science #2
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check text-primary"></i>
-                  Clinical Application #1
-                </li>
-                <li class="mb-2">
-                  <i class="bi bi-check text-primary"></i>
-                  Clinical Application #2
                 </li>
                 <li class="mb-2">
                   <i class="bi bi-check text-primary"></i>
@@ -116,7 +92,7 @@
                 <form action="{% url 'stripe-checkout' %}" method="POST">
                   {% csrf_token %}
                   <input type="hidden" name="price-id" value="price_1OhxzNHnSCQ3O7d7ZCmrR6ai" />
-                  <button class="btn btn-primary" type="submit" id="checkout-button">Get access</button>
+                  <button class="btn btn-primary" type="submit" id="checkout-button">Buy 4 exam tokens</button>
                 </form>
               </div>
             </div>
