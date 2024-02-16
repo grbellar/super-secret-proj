@@ -1,11 +1,14 @@
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.shortcuts import render, redirect
-from django.http import HttpResponseBadRequest, JsonResponse
+from django.http import HttpResponseBadRequest, JsonResponse, HttpResponse, HttpResponseForbidden
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import requires_csrf_token
 from django.contrib.auth.decorators import login_required
 from .models import *
 import json
 from django.contrib.auth.decorators import user_passes_test
+from django.views.generic.list import ListView
+from django.utils.decorators import method_decorator
 
 
 def question_to_dict(question):
@@ -135,4 +138,16 @@ def grade_endpoint(request):
         grade(exam_state_to_grade)
 
         return JsonResponse({"message": "graded"})
+
+
+class QuestionListView(UserPassesTestMixin, ListView):
+
+    def test_func(self):
+        return self.request.user.is_staff
     
+    def handle_no_permission(self):
+        if self.raise_exception or self.request.user.is_authenticated:
+            return redirect('home')  # Or any other response
+        return super().handle_no_permission()  # Default behavior for unauthenticated users
+    
+    model = Question

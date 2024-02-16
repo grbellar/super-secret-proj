@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+  <ul style="list-style-type: none;">
+    {% for question in object_list %}
+      <li class="lead">{{ question.id }}. {{ question.text }}</li>
+      <p></p>
+      <ul>
+        {% for choice in question.choices.all %}
+          {% if choice.is_correct %}
+            <li>
+              <strong>*{{ choice.text }}</strong>
+            </li>
+          {% else %}
+            <li>{{ choice.text }}</li>
+          {% endif %}
+          <p></p>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </ul>
+{% endblock %}
