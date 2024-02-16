@@ -15,7 +15,7 @@
         {% if not request.user.is_authenticated %}
         <p>Create an account or log in to get started.</p>
         <a class="btn btn-primary" href="{% url 'account_signup' %}">Create account</a>
-        <a class="btn btn-primary" href="{% url 'account_login' %}">Log in</a>
+        <a class="btn btn-outline-secondary" href="{% url 'account_login' %}">Log in</a>
         {% endif %}
       </div>
       <div class="row gx-5 justify-content-center">
